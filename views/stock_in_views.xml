@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Declaración de la versión XML -->
+
+<odoo>
+
+   <!-- Vistas para el modelo StockIn -->
+
+   <!-- Vista de formulario para el modelo StockIn -->
+   <record id="view_stock_in_form" model="ir.ui.view">
+       <!-- Identificador único de la vista -->
+       <field name="name">stock.in.form</field>
+       <!-- Nombre de la vista -->
+       <field name="model">stock.in</field>
+       <!-- Modelo al que está asociada la vista -->
+       <field name="arch" type="xml">
+           <!-- Definición de la arquitectura de la vista -->
+           <form string="Stock In">
+               <!-- Vista de formulario -->
+               <sheet>
+                   <!-- Contenedor principal de la vista de formulario -->
+                   <group>
+                       <!-- Grupo de campos -->
+                       <field name="product_id"/>
+                       <!-- Campo para el identificador del producto -->
+                       <field name="quantity"/>
+                       <!-- Campo para la cantidad -->
+                       <field name="move_date"/>
+                       <!-- Campo para la fecha del movimiento -->
+                   </group>
+               </sheet>
+           </form>
+       </field>
+   </record>
+
+   <!-- Vista de árbol para el modelo StockIn -->
+   <record id="view_stock_in_tree" model="ir.ui.view">
+       <!-- Identificador único de la vista -->
+       <field name="name">stock.in.tree</field>
+       <!-- Nombre de la vista -->
+       <field name="model">stock.in</field>
+       <!-- Modelo al que está asociada la vista -->
+       <field name="arch" type="xml">
+           <!-- Definición de la arquitectura de la vista -->
+           <tree string="Stock In">
+               <!-- Vista de árbol -->
+               <field name="product_id"/>
+               <!-- Campo para el identificador del producto -->
+               <field name="quantity"/>
+               <!-- Campo para la cantidad -->
+               <field name="move_date"/>
+               <!-- Campo para la fecha del movimiento -->
+           </tree>
+       </field>
+   </record>
+
+   <!-- Vista de búsqueda para el modelo StockIn -->
+   <record id="view_stock_in_search" model="ir.ui.view">
+       <!-- Identificador único de la vista -->
+       <field name="name">stock.in.search</field>
+       <!-- Nombre de la vista -->
+       <field name="model">stock.in</field>
+       <!-- Modelo al que está asociada la vista -->
+       <field name="arch" type="xml">
+           <!-- Definición de la arquitectura de la vista -->
+           <search string="Search Stock In">
+               <!-- Vista de búsqueda -->
+               <field name="product_id"/>
+               <!-- Campo para el identificador del producto en la búsqueda -->
+               <field name="move_date"/>
+               <!-- Campo para la fecha del movimiento en la búsqueda -->
+           </search>
+       </field>
+   </record>
+</odoo>
+

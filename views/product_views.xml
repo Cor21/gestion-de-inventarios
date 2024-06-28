@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Declaración de la versión XML -->
+
+<odoo>
+
+    <!-- Vista de formulario para el modelo Product -->
+    <record id="view_product_form" model="ir.ui.view">
+        <!-- Identificador único de la vista -->
+        <field name="name">product.form</field>
+        <!-- Nombre de la vista -->
+        <field name="model">product</field>
+        <!-- Modelo al que está asociada la vista -->
+        <field name="arch" type="xml">
+            <!-- Definición de la arquitectura de la vista -->
+            <form string="Product">
+                <!-- Vista de formulario -->
+                <sheet>
+                    <!-- Contenedor principal de la vista de formulario -->
+                    <group>
+                        <!-- Grupo de campos -->
+                        <field name="name"/>
+                        <!-- Campo para el nombre del producto -->
+                        <field name="quantity_on_hand" readonly="1"/>
+                        <!-- Campo para la cantidad en stock (solo lectura) -->
+                        <field name="inventory_cost" readonly="1"/>
+                        <!-- Campo para el costo total del inventario (solo lectura) -->
+                        <field name="cost_price"/>
+                        <!-- Campo para el precio de costo del producto -->
+                    </group>
+                    <notebook>
+                        <!-- Cuaderno con pestañas para organizar secciones -->
+                        <page string="Movimientos de entrada">
+                            <!-- Pestaña para los movimientos de entrada -->
+                            <field name="in_moves_ids">
+                                <!-- Campo que muestra una lista de movimientos de entrada -->
+                                <tree string="Movimientos de entrada">
+                                    <!-- Vista de árbol para los movimientos de entrada -->
+                                    <field name="quantity"/>
+                                    <!-- Campo para la cantidad del movimiento -->
+                                    <field name="move_date"/>
+                                    <!-- Campo para la fecha del movimiento -->
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Movimientos de salida">
+                            <!-- Pestaña para los movimientos de salida -->
+                            <field name="out_moves_ids">
+                                <!-- Campo que muestra una lista de movimientos de salida -->
+                                <tree string="Movimientos de salida">
+                                    <!-- Vista de árbol para los movimientos de salida -->
+                                    <field name="quantity"/>
+                                    <!-- Campo para la cantidad del movimiento -->
+                                    <field name="move_date"/>
+                                    <!-- Campo para la fecha del movimiento -->
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de árbol para el modelo Product -->
+    <record id="view_product_tree" model="ir.ui.view">
+        <!-- Identificador único de la vista -->
+        <field name="name">product.tree</field>
+        <!-- Nombre de la vista -->
+        <field name="model">product</field>
+        <!-- Modelo al que está asociada la vista -->
+        <field name="arch" type="xml">
+            <!-- Definición de la arquitectura de la vista -->
+            <tree string="Product">
+                <!-- Vista de árbol -->
+                <field name="name"/>
+                <!-- Campo para el nombre del producto -->
+                <field name="quantity_on_hand"/>
+                <!-- Campo para la cantidad en stock -->
+                <field name="inventory_cost"/>
+                <!-- Campo para el costo total del inventario -->
+                <field name="cost_price"/>
+                <!-- Campo para el precio de costo del producto -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de búsqueda para el modelo Product -->
+    <record id="view_product_search" model="ir.ui.view">
+        <!-- Identificador único de la vista -->
+        <field name="name">product.search</field>
+        <!-- Nombre de la vista -->
+        <field name="model">product</field>
+        <!-- Modelo al que está asociada la vista -->
+        <field name="arch" type="xml">
+            <!-- Definición de la arquitectura de la vista -->
+            <search string="Search Products">
+                <!-- Vista de búsqueda -->
+                <field name="name"/>
+                <!-- Campo para el nombre del producto en la búsqueda -->
+                <field name="cost_price"/>
+                <!-- Campo para el precio de costo del producto en la búsqueda -->
+            </search>
+        </field>
+    </record>
+</odoo>

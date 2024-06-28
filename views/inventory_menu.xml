@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Acción para el modelo Product -->
+    <record id="action_product" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acción para el modelo StockIn -->
+    <record id="action_stock_in" model="ir.actions.act_window">
+        <field name="name">Stock In</field>
+        <field name="res_model">stock.in</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acción para el modelo StockOut -->
+    <record id="action_stock_out" model="ir.actions.act_window">
+        <field name="name">Stock Out</field>
+        <field name="res_model">stock.out</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú principal para Inventario -->
+    <menuitem id="menu_inventory_root" name="Gestion Inventario" sequence="1"/>
+
+    <!-- Submenú para Productos -->
+    <menuitem id="menu_inventory_product" name="Productos" parent="menu_inventory_root" action="action_product" sequence="2"/>
+
+    <!-- Submenú para Stock In -->
+    <menuitem id="menu_inventory_stock_in" name="Stock In" parent="menu_inventory_root" action="action_stock_in" sequence="3"/>
+
+    <!-- Submenú para Stock Out -->
+    <menuitem id="menu_inventory_stock_out" name="Stock Out" parent="menu_inventory_root" action="action_stock_out" sequence="4"/>
+</odoo>

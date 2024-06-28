@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+
+    <!-- Grupo de usuarios para Usuarios de Inventario -->
+    <record id="group_inventory_user" model="res.groups">
+        <!-- Identificador único del grupo de usuarios -->
+        <field name="name">Usuario de Inventario</field>
+        <!-- Nombre del grupo de usuarios -->
+        <field name="category_id" ref="base.module_category_inventory"/>
+        <!-- Categoría del módulo al que pertenece este grupo, referenciado por su ID -->
+    </record>
+
+    <!-- Grupo de usuarios para Administradores de Inventario -->
+    <record id="group_inventory_manager" model="res.groups">
+        <!-- Identificador único del grupo de usuarios -->
+        <field name="name">Administrador de Inventario</field>
+        <!-- Nombre del grupo de usuarios -->
+        <field name="category_id" ref="base.module_category_inventory"/>
+        <!-- Categoría del módulo al que pertenece este grupo, referenciado por su ID -->
+    </record>
+</odoo>
